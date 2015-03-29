@@ -73,10 +73,17 @@ sed "s@^folder=.*\$@folder=%{_datadir}/%{name}@;s@pro00099.template.ini@@" pro00
 %install
 install -m755 -d %{buildroot}%{_datadir}/%{name}
 cd %{srcdir}
-
-mv *.vp *.png *.bmp mod.ini pro00099.ini data %{buildroot}%{_datadir}/%{name}
+# data install
+find -type f -exec chmod -x '{}' \;
+mv *.vp *.png *.bmp mod.ini pro00099.ini data %{buildroot}%{_datadir}/%{name}/
 find %{buildroot}%{_datadir}/%{name} -type d -exec chmod 755 '{}' \;
 
+# fs2_open binary install
+install -D -m755 fs2_open/code/fs2_open_3.7.1 %{buildroot}%{_datadir}/%{name}/fs2_open_diaspora
+chmod +x %{buildroot}%{_datadir}/%{name}/fs2_open_diaspora
+
+%post
+find %{_datadir}/%{name} -type d -exec chmod 755 '{}' \;
 
 %files
 %doc %{srcdir}/*.pdf %{srcdir}/*.txt %{srcdir}/*.rtf 
