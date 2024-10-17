@@ -8,7 +8,7 @@ Version:	1.1.1
 Release:	1
 License:	CCPL
 Group:		Sound
-Url:		http://diaspora.hard-light.net/
+Url:		https://diaspora.hard-light.net/
 Source0:	http://diaspora.fs2downloads.com/%{_sname}.tar.lzma
 #Diaspora_R1_Patch_1.1.tar.lzma::https://copy.com/8wo3AQnYu0bj%2FDiaspora_R1_Patch_1.1.tar.lzma?download=1
 Source1:	Diaspora_R1_Patch_1.1.tar.lzma
