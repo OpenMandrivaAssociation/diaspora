@@ -17,6 +17,11 @@ Source2:	http://diaspora.fs2downloads.com/Diaspora_R1_Patch_1.1.1.tar.lzma
 Patch0:		increase_joy_buttons_fixed.patch
 
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	lua5.1-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(libpng)
